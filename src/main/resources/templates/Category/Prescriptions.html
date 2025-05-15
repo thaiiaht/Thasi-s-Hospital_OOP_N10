@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý lịch khám</title>
+    <link rel="stylesheet" th:href="@{css/category/main.css}">
+</head>
+<body>
+<div class="container">
+    <h1>Quản lý lịch khám</h1>
+
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px;">
+        <button id="homeBtn" onclick="window.location.href='/'">Home</button>
+        <button id="addBtn">Thêm lịch khám</button>
+    </div>
+    <table id="appointmentsTable">
+        <thead>
+        <tr>
+            <th>STT</th>
+            <th>Họ tên bệnh nhân</th>
+            <th>Ngày khám</th>
+            <th>Giờ khám</th>
+            <th>Bác sĩ</th>
+            <th>Ghi chú</th>
+            <th>Hành động</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Dữ liệu sẽ được thêm bằng JS -->
+        </tbody>
+    </table>
+    <div style="margin-top:10px; color:#555;">
+        <strong>Hướng dẫn:</strong> Nhấn <b>Sửa</b> để chỉnh thông tin lịch khám, <b>Xóa</b> để loại bỏ lịch khám khỏi danh sách.
+    </div>
+
+</div>
+
+<!-- Modal thêm/sửa lịch khám -->
+<div id="appointmentModal" class="modal" style="display:none;">
+    <div class="modal-content">
+        <span class="close" id="closeModal">&times;</span>
+        <h2 id="modalTitle">Thêm lịch khám</h2>
+        <form id="appointmentForm">
+            <label>Họ tên bệnh nhân:</label>
+            <input type="text" id="patientName" required>
+            <label>Ngày khám:</label>
+            <input type="date" id="appointmentDate" required>
+            <label>Giờ khám:</label>
+            <input type="time" id="appointmentTime" required>
+            <label>Bác sĩ:</label>
+            <input type="text" id="doctorName" required>
+            <label>Ghi chú:</label>
+            <input type="text" id="note">
+            <input type="hidden" id="editIndex">
+            <button type="submit" id="saveBtn">Lưu</button>
+        </form>
+    </div>
+</div>
+
+<script src="js/category/appointments.js"></script>
+</body>
+</html>

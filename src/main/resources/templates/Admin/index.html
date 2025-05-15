@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Boxicons -->
+    <link href="/css/boxicons.min.css" rel="stylesheet">
+    <!-- My CSS -->
+    <link rel="stylesheet" href="/css/admin/main.css">
+
+    <title>AdminHub</title>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<section id="sidebar">
+    <a class="brand">
+        <i class='bx bxs-smile'></i>
+        <span class="text">AdminHub</span>
+    </a>
+    <ul class="side-menu top">
+        <li class="active">
+            <a id="dashboard-tab">
+                <i class='bx bxs-dashboard' ></i>
+                <span class="text">Dashboard</span>
+            </a>
+        </li>
+    </ul>
+
+    <ul class="side-menu logout-menu">
+        <li>
+            <a href="#" class="logout" style="background: #DB504A; color: #fff;">
+                <span class="text">Logout</span>
+            </a>
+        </li>
+    </ul>
+</section>
+<!-- SIDEBAR -->
+
+<!-- CONTENT -->
+<section id="content">
+    <!-- NAVBAR -->
+    <nav>
+        <i class='bx bx-menu' ></i>
+        <button id="homeBtn" onclick="window.location.href='/'">Home</button>
+        <form action="#">
+            <div class="form-input">
+                <input type="search" placeholder="Search...">
+                <button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
+            </div>
+        </form>
+
+        <a href="#" class="notification">
+            <i class='bx bxs-bell' ></i>
+            <span class="num">8</span>
+        </a>
+        <a class="profile">
+            <img src="/Image/admin/people.png">
+        </a>
+    </nav>
+    <!-- NAVBAR -->
+
+    <!-- MAIN -->
+    <main>
+        <div class="head-title" id="dashboard-section">
+            <div class="left">
+                <h1>Dashboard</h1>
+            </div>
+        </div>
+        <div class="table-data" id="user-section">
+            <div class="todo doctor-form-center" style="width:100%;">
+                <div class="head">
+                    <h3 style="text-align:center;">Thêm/Cập nhật cán bộ bệnh viện</h3>
+                </div>
+                <form id="user-form" class="form">
+                    <input type="hidden" id="user-id" />
+                    <label>
+                        Id:
+                        <input type="text" id="user-id-display" style="background:#f3f3f3;" />
+                    </label>
+                    <label>
+                        Tên nhân viên:
+                        <input type="text" id="user-fullname" required>
+                    </label>
+                    <label>
+                        Username:
+                        <input type="text" id="user-user" required>
+                    </label>
+                    <label>
+                        Password:
+                        <input type="text" id="user-pass" required>
+                    </label>
+                    <label>
+                        Vai trò:
+                        <select id="user-role" required>
+                            <option value="DOCTOR">Bác sĩ</option>
+                            <option value="RECEPTIONIST">Tiếp tân</option>
+                        </select>
+                    </label>
+                    <div class="form-buttons">
+                        <button type="submit" id="user-submit-btn">Thêm cán bộ</button>
+                        <button type="button" id="user-cancel-btn" style="display:none;">Hủy</button>
+                    </div>
+                </form>
+            </div>
+            <div class="order" style="width:100%;">
+                <div class="head">
+                    <h3>Danh sách cán bộ bệnh viện (<span id="user-count">0</span>)</h3>
+                </div>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Tên nhân viên</th>
+                        <th>Username</th>
+                        <th>Password</th>
+                        <th>Vai trò</th>
+                        <th>Thao tác</th>
+                    </tr>
+                    </thead>
+                    <tbody id="user-table-body">
+                    <!-- ...existing code... -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+    <!-- MAIN -->
+</section>
+<!-- CONTENT -->
+
+<script src="/js/admin/script.js"></script>
+</body>
+</html>

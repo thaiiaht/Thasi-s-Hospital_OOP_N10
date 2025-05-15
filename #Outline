@@ -1,0 +1,119 @@
+hospital-management/
+│
+├── src/
+│   └── main/
+│       ├── java/
+│       │   └── com/example/hospital/
+│       │       ├── controller/
+│       │       │   ├── AuthController.java            ← Xử lý đăng nhập, đăng xuất
+│       │       │   ├── AdminController.java           ← Quản lý user, bác sĩ, tiếp tân
+│       │       │   ├── DoctorController.java          ← Xem bệnh nhân & lịch hẹn
+│       │       │   ├── ReceptionistController.java    ← Tạo bệnh nhân, lịch hẹn
+│       │       │   ├── PatientController.java         ← Quản lý bệnh nhân
+│       │       │   ├── AppointmentController.java     ← Quản lý lịch hẹn
+│       │       │   ├── MedicalRecordController.java   ← Quản lý bệnh án
+│       │       │   ├── InvoiceController.java         ← Quản lý hóa đơn
+│       │       │
+│       │       ├── model/
+│       │       │   ├── User.java                      ← Entity người dùng (admin, bác sĩ, tiếp tân)
+│       │       │   ├── Role.java                      ← Enum vai trò người dùng
+│       │       │   ├── Patient.java                   ← Entity bệnh nhân
+│       │       │   ├── Appointment.java               ← Entity lịch hẹn
+│       │       │   ├── MedicalRecord.java            ← Entity bệnh án
+│       │       │   ├── Invoice.java                  ← Entity hóa đơn
+│       │       │
+│       │       ├── repository/
+│       │       │   ├── UserRepository.java           ← Lưu trữ người dùng
+│       │       │   ├── PatientRepository.java        ← Lưu trữ bệnh nhân
+│       │       │   ├── AppointmentRepository.java    ← Lưu trữ lịch hẹn
+│       │       │   ├── MedicalRecordRepository.java ← Lưu trữ bệnh án
+│       │       │   ├── InvoiceRepository.java       ← Lưu trữ hóa đơn
+│       │       │
+│       │       ├── service/
+│       │       │   ├── UserService.java             ← Xử lý logic người dùng (đăng nhập, đăng xuất)
+│       │       │   ├── PatientService.java          ← Xử lý logic bệnh nhân
+│       │       │   ├── AppointmentService.java      ← Xử lý logic lịch hẹn
+│       │       │   ├── MedicalRecordService.java   ← Xử lý logic bệnh án
+│       │       │   ├── InvoiceService.java         ← Xử lý logic hóa đơn
+│       │       │
+│       │       ├── security/
+│       │       │   ├── SecurityConfig.java         ← Cấu hình Spring Security
+│       │       │   └── UserDetailsServiceImpl.java ← Load thông tin người dùng cho đăng nhập
+│       │       │
+│       │       └── HospitalManagementApplication.java ← Điểm khởi động ứng dụng Spring Boot
+│
+│       ├── resources/
+│       │   ├── static/
+│       │   │   ├── css/
+│       │   │   └── js/
+│       │   ├── templates/
+│       │   │   ├── login.html                         ← Trang đăng nhập
+│       │   │   ├── dashboard.html                     ← Trang tổng quan
+│       │   │   ├── admin/                             ← Giao diện quản trị viên
+│       │   │   ├── doctor/                            ← Giao diện bác sĩ
+│       │   │   ├── receptionist/                      ← Giao diện tiếp tân
+│       │   │   └── shared/                            ← Các phần chung của giao diện (header, footer, sidebar)
+│       │   └── application.properties                 ← Cấu hình database, bảo mật Spring Security
+│
+├── pom.xml                                            ← Cấu hình Maven (bao gồm dependencies cần thiết như Spring Boot, Spring Security)
+
+resources/
+│
+├── templates/
+│   ├── login.html                          ← Trang đăng nhập
+│   ├── dashboard.html                      ← Trang tổng quan (được sử dụng chung cho Admin, Doctor, Receptionist)
+│   ├── admin/                              ← Giao diện cho Admin
+│   │   ├── admin-dashboard.html            ← Dashboard cho Admin
+│   │   ├── manage-doctors.html            ← Quản lý bác sĩ
+│   │   ├── manage-receptionists.html      ← Quản lý tiếp tân
+│   │   ├── manage-patients.html           ← Quản lý bệnh nhân
+│   │   ├── manage-appointments.html       ← Quản lý lịch hẹn
+│   │   └── view-invoices.html             ← Xem và quản lý hóa đơn
+│   ├── doctor/                             ← Giao diện cho Bác sĩ
+│   │   ├── doctor-dashboard.html           ← Dashboard cho Bác sĩ
+│   │   ├── view-patients.html             ← Xem danh sách bệnh nhân
+│   │   └── view-appointments.html         ← Xem lịch hẹn
+│   ├── receptionist/                       ← Giao diện cho Tiếp tân
+│   │   ├── receptionist-dashboard.html     ← Dashboard cho Tiếp tân
+│   │   ├── add-edit-patient.html          ← Thêm hoặc chỉnh sửa bệnh nhân
+│   │   ├── add-edit-appointment.html      ← Thêm hoặc chỉnh sửa lịch hẹn
+│   │   └── view-appointments.html         ← Xem lịch hẹn
+│   └── shared/                             ← Các phần dùng chung (layout)
+│       ├── header.html                    ← Phần đầu trang (menu, thông tin người dùng)
+│       ├── footer.html                    ← Phần chân trang (thông tin bản quyền, các liên kết chung)
+│       ├── sidebar.html                   ← Thanh điều hướng (cho Admin, Doctor, Receptionist)
+│       └── layout.html                    ← Layout chung dùng để nhúng header, footer và sidebar
+
+static/
+│
+├── css/
+│   ├── login/                  ← CSS dành cho trang đăng nhập
+│   │   └── login.css
+│   │
+│   ├── dashboard/              ← CSS dành cho trang dashboard
+│   │   └── dashboard.css
+│   │
+│   └── common/                 ← CSS chung cho các trang khác
+│       ├── header.css
+│       ├── footer.css
+│       └── styles.css
+│
+├── js/
+│   ├── login/                  ← JS dành cho trang đăng nhập
+│   │   └── login.js
+│   │
+│   ├── dashboard/              ← JS dành cho trang dashboard
+│   │   └── dashboard.js
+│   │
+│   └── common/                 ← JS chung cho các trang khác
+│       └── script.js
+│
+└── images/
+    ├── login/                  ← Hình ảnh dành cho trang đăng nhập
+    │   └── logo.png
+    │
+    ├── dashboard/              ← Hình ảnh dành cho trang dashboard
+    │   └── banner.jpg
+    │
+    └── common/                 ← Hình ảnh chung cho các trang khác
+        └── logo-footer.png

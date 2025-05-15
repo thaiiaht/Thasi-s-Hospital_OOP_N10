@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thasi's Hospital</title>
+    <link rel="stylesheet" th:href="@{css/common/main.css}">
+    <link rel="stylesheet" th:href="@{css/common/utilities.css}">
+    <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css}" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css}" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM8d7x2z5e5c5e5e5e5e5e5e5e5e5e5e5e5e5" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css}" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css}" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+<div class="page-wrapper">
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-content d-flex justify-content-between align-items-center">
+                    <div class="brand-and-toggler d-flex align-items-center justify-content-between">
+                        <a th:href="@{/}" class="navbar-brand d-flex align-items-center">
+                            <span class="brand-shape d-inline-block text-white">T</span>
+                            <span class="brand-text fw-7">Thasi's Hospital</span>
+                        </a>
+                        <button type="button" class="d-none navbar-show-btn">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                    <div class="navbar-box">
+                        <button type="button" class="navbar-hide-btn">
+                            <i class="fas fa-times"></i>
+                        </button>
+                        <ul class="navbar-nav d-flex align-items-center">
+                            <li class="nav-item"><a th:href="@{/}" class="nav-link text-white nav-active text-nowrap">Home</a></li>
+                            <li class="nav-item"><a th:href="@{/appointment}" class="nav-link text-white text-nowrap">Appoinments</a></li>
+                            <li class="nav-item"><a th:href="@{/patient}" class="nav-link text-white text-nowrap">Patients</a></li>
+                            <li class="nav-item"><a th:href="@{/prescription}" class="nav-link text-white text-nowrap">Prescriptions</a></li>
+                            <li class="nav-item"><a th:href="@{/admin}" class="nav-link text-white text-nowrap">My Profile</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="element-one">
+            <img src="Image/common/element-img-1.png" alt="">
+        </div>
+        <div class="banner">
+            <div class="container">
+                <div class="banner-content">
+                    <div class="banner-left">
+                        <div class="content-wrapper">
+                            <h1 class="banner-title">Cure. Care. Advance</h1>
+                            <p class="text text-white">Trang web nội bộ dành cho nhân viên, cán bộ bệnh viện</p>
+                            <a th:href="@{/appointment}" class="btn btn-secondary">Check today</a>
+                        </div>
+                    </div>
+                    <div class="banner-right d-flex align-items-center justify-content-end">
+                        <img th:src="@{Image/common/banner-image.png}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="sc-services">
+            <div class="services-shape"></div>
+            <div class="container">
+                <div class="services-content">
+                    <div class="title-box text-center" style="background: linear-gradient(90deg, #e3f0ff 0%, #f8fbff 100%); border-radius: 16px; padding: 24px 0;">
+                        <div class="content-wrapper">
+                            <h3 class="title-box-name">Our services</h3>
+
+                            <p class="text title-box-text">Chức năng dành cho nhân viên, cán bộ</p>
+                        </div>
+                    </div>
+                    <div class="services-list justify-content-center">
+                        <div class="services-item">
+                            <div class="item-icon service-icon-raised">
+                                <img th:src="@{Image/common/service-icon-1.png}" alt="service icon">
+                            </div>
+                            <h5 class="item-title fw-7">Tra cứu lịch khám</h5>
+                            <p class="text">Kiểm tra lịch khám, đặt và sửa, cập nhật lịch khám .</p>
+                        </div>
+                        <div class="services-item">
+                            <div class="item-icon service-icon-raised">
+                                <img th:src="@{Image/common/service-icon-2.png}" alt="service icon">
+                            </div>
+                            <h5 class="item-title fw-7">Đơn thuốc</h5>
+                            <p class="text">Tra cứu đơn thuốc (Thêm, sửa đơn thuốc với bác sĩ,..)</p>
+                        </div>
+                        <div class="services-item">
+                            <div class="item-icon service-icon-raised">
+                                <img th:src="@{Image/common/service-icon-3.png}" alt="service icon">
+                            </div>
+                            <h5 class="item-title fw-7">Hồ sơ bệnh nhân</h5>
+                            <p class="text">Tra cứu hồ sơ bệnh nhân, sửa, cập nhật và thêm mới.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="sc-grid sc-grid-one">
+            <div class="container">
+                <div class="grid-content d-grid align-items-center">
+                    <div class="grid-img">
+                        <img th:src="@{Image/common/health-care-img.png}" alt="">
+                    </div>
+                    <div class="grid-text">
+                        <div class="content-wrapper text-start">
+                            <div class="title-box">
+                                <h3 class="title-box-name text-white">Leading healthcare providers</h3>
+                                <div class="title-separator mx-auto"></div>
+                            </div>
+                            <p class="text title-box-text text-white">Với sứ mệnh "Chăm sóc sức khỏe cộng đồng bằng chất lượng và y đức", chúng tôi không ngừng đổi mới để mang lại dịch vụ khám chữa bệnh hiệu quả, an toàn và thuận tiện nhất cho người dân.</p>
+                            <button type="button" class="btn btn-white-outline">Learn more</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-list d-grid text-white">
+                    <div class="footer-item">
+                        <a  class="navbar-brand d-flex align-items-center">
+                            <span class="brand-shape d-inline-block text-white">M</span>
+                            <span class="brand-text fw-7">Thasi's Hospital</span>
+                        </a>
+                        <p class="text-white">Provides accessible, affordable, and modern healthcare services for everyone — both online and on-site.</p>
+                        <p class="text-white copyright-text">&copy; Thasi's Hospital 2025. All rights reserved.</p>
+                    </div>
+                    <div class="footer-item">
+                        <h3 class="footer-item-title">Company</h3>
+                        <ul class="footer-links">
+                            <li><a ">About</a></li>
+                            <li><a ">Appoinments</a></li>
+                            <li><a ">Patients</a></li>
+                            <li><a ">Prescriptions</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-item">
+                        <h3 class="footer-item-title">Region</h3>
+                        <ul class="footer-links">
+                            <li><a >Vietnam</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-item">
+                        <h3 class="footer-item-title">Help</h3>
+                        <ul class="footer-links">
+                            <li><a >Help center</a></li>
+                            <li><a >Contact support</a></li>
+                            <li><a >Instructions</a></li>
+                            <li><a >How it works</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-element-1">
+            <img th:src="@{Image/common/element-img-4.png}" alt="">
+        </div>
+        <div class="footer-element-2">
+            <img th:src="@{Image/common/element-img-5.png}" alt="">
+        </div>
+    </footer>
+</div>
+<script th:src="@{https://code.jquery.com/jquery-3.7.1.js}" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js}" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script th:src="@{js/common/script.js}"></script>
+</body>
+</html>
