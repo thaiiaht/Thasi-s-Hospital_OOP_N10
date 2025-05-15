@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/412e5890-a4c2-4384-bfb1-994a337d18a7)# Thasi-s-Hospital_OOP_N10
+# Thasi-s-Hospital_OOP_N10
 
 # 🏥 Thasi's Hospital Management System (Nhóm 10 - OOP)
 
